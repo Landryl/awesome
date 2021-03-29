@@ -15,13 +15,14 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awesome.connect_signal("theme::update", function()
-    debug.print_error("theme set signal received")
     for s in screen do
         update_theme(s)
     end
 end)
 
 awful.screen.connect_for_each_screen(function(s)
+    -- Creating a statusbar for each screen
     s.statusbar = statusbar.new(s)
+
     update_theme(s)
 end)

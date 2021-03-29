@@ -103,10 +103,10 @@ end
 function statusbar:recolor()
     self.bar.bg = beautiful.bg_normal
     self.bar.fg = beautiful.fg_normal
-    --s.promptbox.bg = beautiful.fg_normal
-    --s.promptbox.bg_cursor = beautiful.fg_normal
-    --s.promptbox.fg = beautiful.bg_normal
-    --s.promptbox.fg_cursor = beautiful.bg_normal
+    self.promptbox.bg = beautiful.fg_normal
+    self.promptbox.bg_cursor = beautiful.fg_normal
+    self.promptbox.fg = beautiful.bg_normal
+    self.promptbox.fg_cursor = beautiful.bg_normal
 end
 
 return statusbar
