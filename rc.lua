@@ -9,3 +9,6 @@ require("config-screen")
 
 -- Loadding keyboard bindings
 require("config-keyboard")
+
+-- Loading additional signals hookings
+require("config-signals")
