@@ -2,7 +2,7 @@ gdebug = require("gears").debug
 
 -- Loading themes
 local themes = require("themes")
-themes.set("base16")
+themes.set(themes.list()[1])
 
 -- Loading screens configuration
 require("config-screen")

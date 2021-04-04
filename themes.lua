@@ -10,4 +10,19 @@ function themes.set(theme)
     awesome.emit_signal("theme::update")
 end
 
+function themes.list()
+    local list = {}
+    local f = io.popen("ls themes")
+    if f then
+        item = f:read()
+        while item do
+            table.insert(list, item)
+            item = f:read()
+        end
+    else
+        gdebug.print_error("Failed list themes")
+    end
+    return list
+end
+
 return themes
