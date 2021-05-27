@@ -24,5 +24,8 @@ awful.screen.connect_for_each_screen(function(s)
     -- Creating a statusbar for each screen
     s.statusbar = statusbar.new(s)
 
+    -- Set layout
+    awful.tag.new({"main"}, s, {awful.layout.suit.tile.left})
+
     update_theme(s)
 end)
