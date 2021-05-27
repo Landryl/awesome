@@ -7,8 +7,13 @@ themes.set(themes.list()[1])
 -- Loading screens configuration
 require("config-screen")
 
--- Loadding keyboard bindings
+-- Loading keyboard bindings
 require("config-keyboard")
 
 -- Loading additional signals hookings
 require("config-signals")
+
+xrdb = require("xrdb")
+xrdb.export()
+
+require("awful.autofocus")
