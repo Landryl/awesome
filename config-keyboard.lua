@@ -1,6 +1,8 @@
 local gears = require("gears")
 local awful = require("awful")
 
+local ts = require("theme-switcher")
+
 local mod = "Mod4"
 
 globalkeys = gears.table.join(
@@ -28,7 +30,9 @@ globalkeys = gears.table.join(
     awful.key({ mod, "Shift" }, "j", function() awful.client.swap.byidx(1) end,
               { description = "Swap client with next by index", group = "Layout" }),
     awful.key({ mod, "Shift" }, "k", function() awful.client.swap.byidx(-1) end,
-              { description = "Swap client with next by index", group = "Layout" })
+              { description = "Swap client with next by index", group = "Layout" }),
+
+    awful.key({ mod }, "t", function() ts.launch() end)
 )
 
 root.keys(globalkeys)
