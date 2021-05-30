@@ -55,6 +55,9 @@ local theme = {}
     theme.bg_normal = theme.background
     theme.fg_normal = theme.foreground
 
+    theme.bg_focus    = base02
+    theme.fg_focus    = base05
+
     theme.useless_gap = dpi(3)
 
 return theme
