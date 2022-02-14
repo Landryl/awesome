@@ -1,6 +1,7 @@
 -- Colors from http://chriskempson.com/projects/base16/
 -- Wallpaper from https://wallpapercave.com/w/wp4448000 (recolored)
 
+local env = require("config-env")
 local dpi = require("beautiful.xresources").apply_dpi
 
 local base00 = "#181818"
@@ -22,7 +23,7 @@ local base0F = "#a16946"
 
 local theme = {}
     theme.name = "base16"
-    theme.wallpaper = "themes/" .. theme.name .. "/wallpaper.png"
+    theme.wallpaper = env.themesdir .. theme.name .. "/wallpaper.png"
 
     theme.font = "SauceCodePro Nerd Font Mono 12"
 
