@@ -30,6 +30,8 @@ local theme = {}
     theme.foreground  = base05
     theme.background  = base00
     theme.cursorColor = base05
+    theme.border      = base00
+
     theme.color0      = base00
     theme.color1      = base08
     theme.color2      = base0B

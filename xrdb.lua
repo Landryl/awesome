@@ -7,7 +7,7 @@ local xrdb = {}
 function xrdb.export()
     local p = io.popen("xrdb -merge", "w")
 
-    export_list = {'foreground', 'background', 'cursorColor'}
+    export_list = {'foreground', 'background', 'cursorColor', 'border'}
     for i=0,21 do
         table.insert(export_list, 'color' .. tostring(i))
     end
