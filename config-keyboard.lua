@@ -40,6 +40,51 @@ keys.global = gears.table.join(
     awful.key({ mod }, "t", function() ts.launch() end)
 )
 
+-- Tags management
+for i = 1, 9 do
+    keys.global = gears.table.join(keys.global,
+        -- View tag only.
+        awful.key({ mod }, "#" .. i + 9,
+                  function ()
+                      local screen = awful.screen.focused()
+                      local tag = screen.tags[i]
+                      if tag then
+                         tag:view_only()
+                      end
+                  end),
+        -- Toggle tag display.
+        awful.key({ mod, "Control" }, "#" .. i + 9,
+                  function ()
+                      local screen = awful.screen.focused()
+                      local tag = screen.tags[i]
+                      if tag then
+                         awful.tag.viewtoggle(tag)
+                      end
+                  end),
+        -- Move client to tag.
+        awful.key({ mod, "Shift" }, "#" .. i + 9,
+                  function ()
+                      if client.focus then
+                          local tag = client.focus.screen.tags[i]
+                          if tag then
+                              client.focus:move_to_tag(tag)
+                          end
+                      end
+                  end),
+        -- Toggle tag on focused client.
+        awful.key({ mod, "Control", "Shift" }, "#" .. i + 9,
+                  function ()
+                      if client.focus then
+                          local tag = client.focus.screen.tags[i]
+                          if tag then
+                              client.focus:toggle_tag(tag)
+                          end
+                      end
+                  end)
+    )
+end
+
+
 -- TODO move elsewhere ?
 root.keys(keys.global)
 
