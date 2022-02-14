@@ -13,6 +13,11 @@ keys.global = gears.table.join(
     awful.key({ mod, "Shift" }, "r", awesome.restart,
               { description = "Restart Awesome", group = "Awesome"}),
 
+    awful.key({ mod }, "d",
+        function()
+            awful.spawn("rofi -show drun", {screen = awful.screen.focused() })
+        end,
+        {description = "Launch rofi", group = "Launcher"}),
     awful.key({mod}, "Return",
         function()
             awful.spawn("urxvt", {screen = awful.screen.focused() })
