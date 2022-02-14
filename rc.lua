@@ -8,10 +8,15 @@ themes.set(themes.list()[1])
 require("config-screen")
 
 -- Loading keyboard bindings
-require("config-keyboard")
+local keys = require("config-keyboard")
 
 -- Loading additional signals hookings
 require("config-signals")
+
+-- Loading client rules
+local rules = require("config-rules")
+rules:init(keys)
+
 
 xrdb = require("xrdb")
 xrdb.export()
