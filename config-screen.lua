@@ -3,6 +3,8 @@ local gears = require("gears")
 local beautiful = require("beautiful")
 local statusbar = require("statusbar")
 
+local env = require("config-env")
+
 local function set_wallpaper(s)
     gears.wallpaper.maximized(beautiful.wallpaper, s, true)
 end
@@ -25,7 +27,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.statusbar = statusbar.new(s)
 
     -- Set layout
-    awful.tag.new({"main"}, s, {awful.layout.suit.tile.left})
+    awful.tag.new(env.tags, s, {awful.layout.suit.tile.left})
 
     update_theme(s)
 end)
