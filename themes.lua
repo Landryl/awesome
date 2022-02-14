@@ -5,14 +5,14 @@ local beautiful = require("beautiful")
 local themes = {}
 
 function themes.set(theme)
-    local path = "themes/" .. theme .. "/theme.lua"
+    local path = "~/.config/awesome/themes/" .. theme .. "/theme.lua"
     beautiful.init(path)
     awesome.emit_signal("theme::update")
 end
 
 function themes.list()
     local list = {}
-    local f = io.popen("ls themes")
+    local f = io.popen("ls ~/.config/awesome/themes")
     if f then
         item = f:read()
         while item do
