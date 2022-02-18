@@ -2,6 +2,7 @@ local gears = require("gears")
 local awful = require("awful")
 
 local ts = require("theme-switcher")
+local pa = require("pulseaudio")
 
 local mod = "Mod1"
 
@@ -42,7 +43,31 @@ keys.global = gears.table.join(
     awful.key({ mod, "Shift" }, "k", function() awful.client.swap.byidx(-1) end,
               { description = "Swap client with next by index", group = "Layout" }),
 
-    awful.key({ mod }, "t", function() ts.launch() end)
+    awful.key({ mod }, "t", function() ts.launch() end),
+
+    awful.key({ }, "XF86MonBrightnessUp",
+        function()
+            awful.spawn("xbacklight -inc 10")
+        end),
+    awful.key({ }, "XF86MonBrightnessDown",
+        function()
+            awful.spawn("xbacklight -dec 10")
+        end),
+
+    awful.key({ }, "XF86AudioRaiseVolume",
+        function()
+            pa.volume_up(5)
+        end),
+
+    awful.key({ }, "XF86AudioLowerVolume",
+        function()
+            pa.volume_down(5)
+        end),
+
+    awful.key({ }, "XF86AudioMute",
+        function()
+            pa.mute(5)
+        end)
 )
 
 -- Tags management
