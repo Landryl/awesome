@@ -58,6 +58,9 @@ local theme = {}
     theme.bg_focus    = base02
     theme.fg_focus    = base05
 
+    theme.border_width = 0
+    theme.border_color = theme.bg_normal
+
     theme.useless_gap = dpi(3)
 
 return theme
