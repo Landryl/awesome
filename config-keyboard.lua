@@ -47,11 +47,11 @@ keys.global = gears.table.join(
 
     awful.key({ }, "XF86MonBrightnessUp",
         function()
-            awful.spawn("xbacklight -inc 10")
+            awful.spawn("brightnessctl s +10%")
         end),
     awful.key({ }, "XF86MonBrightnessDown",
         function()
-            awful.spawn("xbacklight -dec 10")
+            awful.spawn("brightnessctl s 10%-")
         end),
 
     awful.key({ }, "XF86AudioRaiseVolume",
