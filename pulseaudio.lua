@@ -3,7 +3,7 @@ local awful = require("awful")
 local pa = {}
 
 function pa.get_sink_index()
-    local p = io.popen("pacmd list-sinks | grep -e 'index:' | sed 's/.*: //'", "r")
+    local p = io.popen("pacmd list-sinks | grep -e '* index:' | sed 's/.*: //'", "r")
     local str = p:read()
     return str
 end
