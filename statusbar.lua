@@ -43,7 +43,9 @@ function statusbar.new(s)
             local icon = ''
             if percentage < 10 then
                 icon = icons[1]
-                awesome.emit_signal("statusbar::low_battery")
+                if status ~= "Charging" then
+                    awesome.emit_signal("statusbar::low_battery")
+                end
             elseif percentage < 20 then
                 icon = icons[2]
             elseif percentage < 30 then
